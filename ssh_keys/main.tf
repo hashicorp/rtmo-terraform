@@ -4,6 +4,8 @@ variable "name" {}
 resource "aws_key_pair" "mod" {
   key_name   = "${var.name}"
   public_key = "${file("${path.module}/${var.name}.pub")}"
+  
+  lifecycle { create_before_destroy = true }
 }
 
 output "key_name"         { value = "${aws_key_pair.mod.key_name}" }
