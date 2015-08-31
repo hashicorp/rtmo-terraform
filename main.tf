@@ -26,6 +26,7 @@ resource "aws_internet_gateway" "public" {
   vpc_id = "${aws_vpc.vpc.id}"
 
   tags { Name = "${var.name}" }
+  lifecycle { create_before_destroy = true }
 }
 
 resource "aws_subnet" "public" {
