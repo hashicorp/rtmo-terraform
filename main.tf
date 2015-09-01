@@ -32,7 +32,6 @@ resource "aws_internet_gateway" "public" {
 resource "aws_subnet" "public" {
   vpc_id            = "${aws_vpc.vpc.id}"
   cidr_block        = "${var.subnet_cidr}"
-  availability_zone = "us-east-1b"
 
   tags { Name = "${var.name}" }
   lifecycle { create_before_destroy = true }
