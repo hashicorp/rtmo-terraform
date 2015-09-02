@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEY_NAME=$1
+KEY_NAME=${1:?"key name is required as 1. parameter"}
 EXISTING_KEY=$2
 KEY_PATH=.
 KEY=$KEY_PATH/$KEY_NAME
